@@ -33,6 +33,26 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Mobile-first responsive overrides ── */
+    @media (max-width: 639px) {
+      /* Pricing cards: always single column */
+      .pricing-grid { grid-template-columns: 1fr !important; }
+
+      /* Insurance calculator dropdowns: stack vertically */
+      .calc-grid { grid-template-columns: 1fr !important; }
+
+      /* Calc result boxes: full width stack */
+      #calc-result-box { grid-template-columns: 1fr !important; }
+
+      /* Insurance badge pills: wrap nicely */
+      .insurer-flex { flex-direction: column; align-items: stretch; }
+      .insurer-flex > div { text-align: center; }
+
+      /* Hero section: generous padding on small screens */
+      section { padding-left: 16px !important; padding-right: 16px !important; }
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
 
@@ -181,7 +201,7 @@
         <p class="text-sm text-slate-600 font-sans-body">No insurance? High deductible? You can always choose our affordable flat rates.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="pricing-grid grid grid-cols-1 md:grid-cols-4 gap-6">
         
         <!-- Urgent Care -->
         <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">

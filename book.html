@@ -257,36 +257,41 @@
           <!-- STEP 4: Patient Info & Payment -->
           <div class="step-section space-y-6 hidden" data-step="4">
             <div>
-              <h2 class="text-2xl font-extrabold text-slate-900">4. Patient Information & Pharmacy</h2>
+              <h2 class="text-2xl font-extrabold text-slate-900">4. Patient Information &amp; Pharmacy</h2>
               <p class="text-xs text-slate-500 mt-1">Secure HIPAA-compliant encrypted details.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">First Name *</label>
-                <input type="text" id="patient-first-name" required placeholder="Jane" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="patient-first-name">First Name *</label>
+                <input type="text" id="patient-first-name" name="first_name" required autocomplete="given-name" placeholder="Jane"
+                  class="w-full text-base rounded-xl border border-slate-300 px-4 py-3.5 min-h-[48px] focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200">
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">Last Name *</label>
-                <input type="text" id="patient-last-name" required placeholder="Doe" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">Email Address (For Secure Video Link) *</label>
-                <input type="email" id="patient-email" required placeholder="jane.doe@example.com" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number (For SMS Link) *</label>
-                <input type="tel" id="patient-phone" required placeholder="+1 (555) 000-0000" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="patient-last-name">Last Name *</label>
+                <input type="text" id="patient-last-name" name="last_name" required autocomplete="family-name" placeholder="Doe"
+                  class="w-full text-base rounded-xl border border-slate-300 px-4 py-3.5 min-h-[48px] focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200">
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">Your State (Licensed in All 50 States) *</label>
-                <select id="patient-state" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="patient-email">Email Address (For Secure Video Link) *</label>
+                <input type="email" id="patient-email" name="email" required autocomplete="email" inputmode="email" placeholder="jane.doe@example.com"
+                  class="w-full text-base rounded-xl border border-slate-300 px-4 py-3.5 min-h-[48px] focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="patient-phone">Phone Number (For SMS Link) *</label>
+                <input type="tel" id="patient-phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+1 (555) 000-0000"
+                  class="w-full text-base rounded-xl border border-slate-300 px-4 py-3.5 min-h-[48px] focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="patient-state">Your State (Licensed in All 50 States) *</label>
+                <select id="patient-state" name="state" autocomplete="address-level1"
+                  class="w-full text-base rounded-xl border border-slate-300 px-4 py-3.5 min-h-[48px] focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 bg-white">
                   <option value="TX">Texas (TX)</option>
                   <option value="CA">California (CA)</option>
                   <option value="FL">Florida (FL)</option>
@@ -299,23 +304,24 @@
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Pharmacy (For Any Prescriptions) *</label>
-                <input type="text" id="patient-pharmacy" required placeholder="e.g. CVS Pharmacy #104, Austin TX" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="patient-pharmacy">Preferred Pharmacy (For Any Prescriptions) *</label>
+                <input type="text" id="patient-pharmacy" name="pharmacy" required autocomplete="off" placeholder="e.g. CVS Pharmacy #104, Austin TX"
+                  class="w-full text-base rounded-xl border border-slate-300 px-4 py-3.5 min-h-[48px] focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200">
               </div>
             </div>
 
             <div class="pt-2 border-t border-slate-200">
               <label class="block text-xs font-bold text-slate-700 mb-2">Payment / Coverage Method</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <label class="border border-brand-200 bg-brand-50/50 p-3.5 rounded-xl flex items-center gap-3 cursor-pointer">
-                  <input type="radio" name="payment-type" value="insurance" checked class="text-brand-600 focus:ring-brand-500">
+                <label class="border border-brand-200 bg-brand-50/50 p-4 rounded-xl flex items-center gap-3 cursor-pointer min-h-[56px]">
+                  <input type="radio" name="payment-type" value="insurance" checked class="w-5 h-5 text-brand-600 focus:ring-brand-500">
                   <div>
                     <span class="text-xs font-bold text-slate-900 block">Health Insurance (Copay $0–$25)</span>
                     <span class="text-[11px] text-slate-500">Aetna, BCBS, Cigna, UHC, Medicare</span>
                   </div>
                 </label>
-                <label class="border border-slate-200 p-3.5 rounded-xl flex items-center gap-3 cursor-pointer">
-                  <input type="radio" name="payment-type" value="self-pay" class="text-brand-600 focus:ring-brand-500">
+                <label class="border border-slate-200 p-4 rounded-xl flex items-center gap-3 cursor-pointer min-h-[56px]">
+                  <input type="radio" name="payment-type" value="self-pay" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
                   <div>
                     <span class="text-xs font-bold text-slate-900 block">Flat Cash-Pay ($49 Flat)</span>
                     <span class="text-[11px] text-slate-500">No surprise bills • HSA/FSA accepted</span>
@@ -333,7 +339,7 @@
             <div>
               <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Appointment Confirmed!</span>
               <h2 class="text-3xl font-extrabold text-slate-900 mt-1">You Are Ready for Your Visit</h2>
-              <p class="text-xs text-slate-500 mt-2">A secure appointment link has also been sent to your email & phone.</p>
+              <p class="text-xs text-slate-500 mt-2">A secure appointment link has also been sent to your email &amp; phone.</p>
             </div>
 
             <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-left space-y-3 max-w-lg mx-auto text-xs">
@@ -364,10 +370,10 @@
             </div>
 
             <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-              <a id="conf-waiting-room-btn" href="waiting-room.html" class="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+              <a id="conf-waiting-room-btn" href="waiting-room.html" class="w-full sm:w-auto px-8 py-4 min-h-[52px] bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl shadow-lg transition flex items-center justify-center gap-2">
                 <i data-lucide="video" class="w-4 h-4"></i> Enter Virtual Consultation Room Demo
               </a>
-              <a href="index.html" class="w-full sm:w-auto px-6 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition text-center">
+              <a href="index.html" class="w-full sm:w-auto px-6 py-4 min-h-[52px] bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition text-center flex items-center justify-center">
                 Return to Home
               </a>
             </div>
@@ -375,15 +381,15 @@
 
           <!-- Action Buttons (Next / Prev / Submit) -->
           <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
-            <button type="button" id="btn-prev" class="hidden px-5 py-2.5 text-xs font-bold text-slate-600 hover:text-slate-900 rounded-xl border border-slate-300 hover:bg-slate-50 transition">
+            <button type="button" id="btn-prev" class="hidden px-6 py-3 min-h-[48px] text-sm font-bold text-slate-600 hover:text-slate-900 rounded-xl border border-slate-300 hover:bg-slate-50 transition">
               ← Back
             </button>
             <div class="ml-auto flex items-center gap-3">
-              <button type="button" id="btn-next" class="px-8 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-brand-500/25 transition flex items-center gap-2">
+              <button type="button" id="btn-next" class="px-8 py-3.5 min-h-[52px] bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-brand-500/25 transition flex items-center gap-2">
                 Continue <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
-              <button type="submit" id="btn-submit" class="hidden px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center gap-2">
-                Confirm & Start Visit <i data-lucide="check" class="w-4 h-4"></i>
+              <button type="submit" id="btn-submit" class="hidden px-8 py-3.5 min-h-[52px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center gap-2">
+                Confirm &amp; Start Visit <i data-lucide="check" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
