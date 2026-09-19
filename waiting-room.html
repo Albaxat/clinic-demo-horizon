@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Consultation Room Preview | Horizon Virtual Care</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#082f49',
+            },
+            tealAccent: {
+              500: '#0d9488',
+              600: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+
+  <!-- Telehealth Room Top Bar -->
+  <header class="bg-slate-900 border-b border-slate-800 px-4 sm:px-8 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-sm hover:opacity-90">
+        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
+          <i data-lucide="activity" class="w-4 h-4 text-white"></i>
+        </div>
+        <span>Horizon<span class="text-brand-400">Virtual Care</span></span>
+      </a>
+      <span class="text-slate-600">|</span>
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Encrypted HIPAA Telehealth Room
+      </span>
+    </div>
+
+    <div class="flex items-center gap-4 text-xs">
+      <span class="text-slate-400">Session ID: <strong class="text-slate-200" id="room-session-id">#HVC-LIVE-82914</strong></span>
+      <a href="index.html" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition">Exit Demo</a>
+    </div>
+  </header>
+
+  <!-- Video Main Stage -->
+  <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- Left Stage: Video Feeds -->
+    <div class="lg:col-span-8 space-y-4">
+      
+      <!-- Video Container -->
+      <div class="relative bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 aspect-video flex items-center justify-center shadow-2xl">
+        
+        <!-- Waiting State Screen -->
+        <div id="waiting-screen" class="text-center p-8 space-y-4 max-w-md">
+          <div class="w-20 h-20 rounded-full bg-brand-900/50 border border-brand-500/30 flex items-center justify-center mx-auto text-brand-400 audio-wave">
+            <i data-lucide="user-check" class="w-10 h-10"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-white">You're in the Secure Waiting Room</h2>
+            <p class="text-xs text-slate-400 mt-1">Your board-certified doctor has been notified and will connect shortly.</p>
+          </div>
+
+          <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700 text-xs text-left space-y-2">
+            <div class="flex justify-between text-slate-300">
+              <span>Doctor Queue:</span>
+              <strong class="text-emerald-400">Next In Line (~2 mins)</strong>
+            </div>
+            <div class="flex justify-between text-slate-300">
+              <span>Camera & Audio:</span>
+              <strong class="text-emerald-400">Connected & Clear</strong>
+            </div>
+          </div>
+
+          <button id="btn-simulate-connect" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-extrabold text-xs rounded-xl shadow-lg transition flex items-center justify-center gap-2 mx-auto">
+            <i data-lucide="video" class="w-4 h-4"></i> Simulate Doctor Connecting Now
+          </button>
+        </div>
+
+        <!-- Active Connected Call Screen (Simulated with Dr. Chen Photo) -->
+        <div id="active-call-screen" class="hidden absolute inset-0 bg-slate-900 flex flex-col justify-between p-6">
+          <img src="assets/dr-chen.jpg" alt="Dr. Emily Chen Video Stream" class="absolute inset-0 w-full h-full object-cover object-top opacity-80" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/70"></div>
+
+          <div class="relative z-10 flex justify-between items-start">
+            <div class="bg-slate-950/80 backdrop-blur px-3.5 py-1.5 rounded-full border border-slate-800 text-xs flex items-center gap-2 shadow-lg">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="font-bold text-white">Dr. Emily Chen, MD</span>
+              <span class="text-slate-400">| Urgent Care Specialist</span>
+            </div>
+            <div class="bg-slate-950/80 backdrop-blur px-3 py-1 rounded-lg text-xs font-mono text-emerald-400 border border-slate-800 shadow">
+              04:12 HD 1080p
+            </div>
+          </div>
+
+          <!-- Bottom Banner in Call -->
+          <div class="relative z-10 text-left bg-slate-950/80 backdrop-blur p-3.5 rounded-2xl border border-slate-800 max-w-md">
+            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1.5 mb-0.5">
+              <i data-lucide="activity" class="w-3.5 h-3.5"></i> Live Video Visit Active
+            </div>
+            <p class="text-xs text-slate-200">"Hello! I am reviewing your reported symptoms. Your e-prescription will be transmitted directly to your local pharmacy."</p>
+          </div>
+
+          <!-- Patient Self-View PIP -->
+          <div class="absolute bottom-6 right-6 w-36 h-28 bg-slate-800/90 backdrop-blur rounded-2xl border-2 border-brand-500 overflow-hidden flex flex-col items-center justify-center shadow-2xl z-20">
+            <i data-lucide="user" class="w-8 h-8 text-slate-400 mb-1"></i>
+            <span class="text-[10px] font-semibold text-slate-300">You (Patient)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+          <button id="toggle-mic" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl flex items-center gap-2 transition">
+            <i data-lucide="mic" class="w-4 h-4 text-emerald-400"></i> Mic Mute/Unmute
+          </button>
+          <button id="toggle-cam" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl flex items-center gap-2 transition">
+            <i data-lucide="camera" class="w-4 h-4 text-emerald-400"></i> Video Camera On/Off
+          </button>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="px-4 py-2 bg-red-600/80 hover:bg-red-600 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition">
+            <i data-lucide="phone-off" class="w-4 h-4"></i> End Visit
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Sidebar: Clinical Chat & Rx Orders -->
+    <div class="lg:col-span-4 bg-slate-900 rounded-3xl p-6 border border-slate-800 space-y-6">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <h3 class="font-bold text-white text-sm flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-brand-400"></i> Clinical Notes & Prescription
+        </h3>
+        <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live EHR</span>
+      </div>
+
+      <div class="space-y-4 text-xs font-sans-body">
+        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
+          <span class="text-slate-400 block font-semibold">Triage Category:</span>
+          <p class="text-slate-200 font-medium">Virtual Urgent Care (Acute Sinus & Upper Respiratory)</p>
+        </div>
+
+        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
+          <span class="text-slate-400 block font-semibold">Prescription Routing:</span>
+          <p class="text-emerald-400 font-medium flex items-center gap-1">
+            <i data-lucide="check" class="w-3.5 h-3.5"></i> e-Prescription Verified • CVS Austin TX
+          </p>
+        </div>
+
+        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
+          <span class="text-slate-400 block font-semibold">Attending Physician:</span>
+          <p class="text-slate-200">Dr. Emily Chen, MD (Board-Certified Emergency Medicine)</p>
+        </div>
+      </div>
+
+      <!-- Live Chat Messages -->
+      <div class="pt-4 border-t border-slate-800 space-y-3">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Encrypted In-Visit Chat</span>
+        <div class="space-y-2 max-h-40 overflow-y-auto text-xs">
+          <div class="p-2.5 bg-slate-800/80 rounded-xl text-slate-300">
+            <strong class="text-brand-400 block text-[10px]">Horizon Clinic Bot</strong>
+            Welcome to Horizon Virtual Care! Please remain on this screen; Dr. Chen is connecting.
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <input type="text" placeholder="Type a message to the doctor..." class="flex-grow bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-500">
+          <button class="px-3 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-950 border-t border-slate-900 py-4 px-4 text-center text-xs text-slate-500">
+    Horizon Virtual Care • HIPAA-Compliant 256-Bit SSL Telehealth Session
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    const simBtn = document.getElementById('btn-simulate-connect');
+    const waitingScreen = document.getElementById('waiting-screen');
+    const activeScreen = document.getElementById('active-call-screen');
+
+    if (simBtn) {
+      simBtn.addEventListener('click', () => {
+        waitingScreen.classList.add('hidden');
+        activeScreen.classList.remove('hidden');
+      });
+    }
+
+    // Check query params for ID
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('id')) {
+      document.getElementById('room-session-id').textContent = '#' + urlParams.get('id');
+    }
+  </script>
+</body>
+</html>

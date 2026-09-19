@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing & Insurance | Transparent Virtual Care | Horizon Virtual Care</title>
+  <meta name="description" content="Transparent telehealth pricing with zero surprise bills. We accept Aetna, Blue Cross Blue Shield, Cigna, UnitedHealthcare, and offer flat cash-pay rates starting at $39." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+            },
+            tealAccent: {
+              500: '#0d9488',
+              600: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Sticky Main Navigation -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition">
+            <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight text-slate-900 flex items-center">
+              Horizon<span class="text-brand-600 font-bold ml-1">Virtual Care</span>
+            </span>
+            <span class="block text-[11px] font-medium text-slate-700 tracking-wide">Quality healthcare, wherever you are.</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600 text-sm">
+          <a href="index.html" class="hover:text-brand-600 transition">Home</a>
+          <a href="services.html" class="hover:text-brand-600 transition">Services</a>
+          <a href="doctors.html" class="hover:text-brand-600 transition">Our Doctors</a>
+          <a href="pricing.html" class="text-brand-600 font-semibold">Pricing & Insurance</a>
+          <a href="contact.html" class="hover:text-brand-600 transition">About & Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="book.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-tealAccent-500 hover:from-brand-700 hover:to-tealAccent-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            Book Appointment
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" aria-label="Toggle mobile menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+      <a href="index.html" class="block py-2 text-slate-700 hover:text-brand-600">Home</a>
+      <a href="services.html" class="block py-2 text-slate-700 hover:text-brand-600">Services</a>
+      <a href="doctors.html" class="block py-2 text-slate-700 hover:text-brand-600">Our Doctors</a>
+      <a href="pricing.html" class="block py-2 font-semibold text-brand-600">Pricing & Insurance</a>
+      <a href="contact.html" class="block py-2 text-slate-700 hover:text-brand-600">About & Contact</a>
+      <div class="pt-3 border-t border-slate-100">
+        <a href="book.html" class="text-center block w-full py-3 bg-brand-600 text-white font-semibold rounded-xl">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="bg-gradient-to-b from-brand-50/70 to-slate-50 py-16 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 100% Transparent • No Hidden Fees
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">Simple, Affordable Healthcare Pricing</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg font-sans-body">
+        Whether using in-network health insurance or our upfront flat-fee cash rates, you always know what you pay before you start your visit.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Insurance Copay Estimator -->
+  <section class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-slate-900 to-brand-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        
+        <div class="max-w-2xl space-y-3 mb-8">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-500/20 text-teal-300 border border-teal-400/30">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Instant Price Calculator
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold">Estimate Your Visit Cost</h2>
+          <p class="text-slate-300 text-sm font-sans-body">
+            Select your insurance provider and visit type below to see your estimated out-of-pocket copay.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">1. Select Health Plan</label>
+            <select id="calc-insurer" class="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+              <option value="">-- Choose Insurer --</option>
+              <option value="bcbs">Blue Cross Blue Shield (BCBS)</option>
+              <option value="aetna">Aetna</option>
+              <option value="cigna">Cigna</option>
+              <option value="uhc">UnitedHealthcare (UHC)</option>
+              <option value="medicare">Medicare (Part B)</option>
+              <option value="uninsured">Self-Pay / Cash (No Insurance)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">2. Select Visit Type</label>
+            <select id="calc-service" class="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+              <option value="urgent-care">Virtual Urgent Care (24/7)</option>
+              <option value="primary-care">Primary Care & Wellness Consult</option>
+              <option value="mental-health">Mental Health Counseling</option>
+              <option value="refill">Prescription Refill Renewal</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">3. Plan Deductible Tier</label>
+            <select id="calc-plan-type" class="w-full bg-slate-800 border border-slate-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+              <option value="standard">Standard Copay Plan (PPO/HMO)</option>
+              <option value="hdhp">High Deductible Plan (HDHP / HSA)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button id="calc-btn" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-extrabold text-sm rounded-xl transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2">
+            Calculate Estimated Cost <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          <span class="text-xs text-slate-400">HSA / FSA Cards Accepted for all visits</span>
+        </div>
+
+        <!-- Calculated Output -->
+        <div id="calc-result-box" class="hidden mt-8 pt-8 border-t border-slate-700 grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+          <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
+            <span class="text-xs font-semibold text-slate-400 block mb-1">Estimated In-Network Copay:</span>
+            <div id="calc-copay-estimate" class="text-3xl font-extrabold text-emerald-400">$0 - $25</div>
+            <p id="calc-coverage-notes" class="text-xs text-slate-300 mt-2">In-Network covered benefit! Most patients pay a standard primary/urgent care copay.</p>
+          </div>
+          <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
+            <span class="text-xs font-semibold text-slate-400 block mb-1">Guaranteed Flat Self-Pay Cap:</span>
+            <div id="calc-cash-price" class="text-3xl font-extrabold text-brand-300">$49</div>
+            <p class="text-xs text-slate-300 mt-2">If not using insurance, this is the exact maximum you will pay. No surprise medical bills.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparent Pricing Plans Grid -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl font-extrabold text-slate-900">Clear Flat Cash-Pay Rates</h2>
+        <p class="text-sm text-slate-600 font-sans-body">No insurance? High deductible? You can always choose our affordable flat rates.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <!-- Urgent Care -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-amber-600 uppercase mb-2">Virtual Urgent Care</div>
+            <div class="text-4xl font-extrabold text-slate-900 mb-1">$49</div>
+            <div class="text-xs text-slate-500 mb-4">or Insurance Copay ($0-$25)</div>
+            <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+              <li>• Connect within 15 minutes</li>
+              <li>• Flu, sinus, UTI, rash, pink eye</li>
+              <li>• Same-day e-Prescription</li>
+              <li>• Doctor notes for work/school</li>
+            </ul>
+          </div>
+          <a href="book.html?service=urgent-care" class="mt-6 w-full py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl text-center block">Book Urgent Care</a>
+        </div>
+
+        <!-- Primary Care -->
+        <div class="bg-white rounded-2xl p-6 border border-brand-300 shadow-md card-hover relative flex flex-col justify-between">
+          <div class="absolute -top-3 right-4 bg-brand-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Most Popular</div>
+          <div>
+            <div class="text-xs font-bold text-brand-600 uppercase mb-2">Primary Care & Wellness</div>
+            <div class="text-4xl font-extrabold text-slate-900 mb-1">$79</div>
+            <div class="text-xs text-slate-500 mb-4">or Insurance Copay ($0-$30)</div>
+            <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+              <li>• Dedicated family physician</li>
+              <li>• Chronic illness & lab orders</li>
+              <li>• Preventive health strategy</li>
+              <li>• Specialist referral letters</li>
+            </ul>
+          </div>
+          <a href="book.html?service=primary-care" class="mt-6 w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl text-center block">Book Primary Care</a>
+        </div>
+
+        <!-- Mental Health -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-purple-600 uppercase mb-2">Mental Health Therapy</div>
+            <div class="text-4xl font-extrabold text-slate-900 mb-1">$89</div>
+            <div class="text-xs text-slate-500 mb-4">or Insurance Copay ($0-$35)</div>
+            <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+              <li>• 45-min video therapy session</li>
+              <li>• Anxiety, depression & CBT</li>
+              <li>• Licensed therapists & psych</li>
+              <li>• Safe, 100% confidential</li>
+            </ul>
+          </div>
+          <a href="book.html?service=mental-health" class="mt-6 w-full py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl text-center block">Book Therapy</a>
+        </div>
+
+        <!-- Prescription Refill -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold text-teal-600 uppercase mb-2">Prescription Refill</div>
+            <div class="text-4xl font-extrabold text-slate-900 mb-1">$39</div>
+            <div class="text-xs text-slate-500 mb-4">Flat fast renewal</div>
+            <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-100 pt-4">
+              <li>• Quick provider review</li>
+              <li>• Direct e-Rx to your pharmacy</li>
+              <li>• Asthma, blood pressure, thyroid</li>
+              <li>• No controlled substances</li>
+            </ul>
+          </div>
+          <a href="book.html?service=refill" class="mt-6 w-full py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl text-center block">Renew Medication</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accepted Insurances Banner -->
+  <section class="py-12 bg-white border-y border-slate-200 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Partnered In-Network with Major US Insurance Carriers</h3>
+      <div class="flex flex-wrap justify-center items-center gap-8 text-slate-600 font-bold text-base">
+        <div class="px-5 py-2.5 bg-slate-50 rounded-xl border border-slate-200">Aetna</div>
+        <div class="px-5 py-2.5 bg-slate-50 rounded-xl border border-slate-200">Blue Cross Blue Shield</div>
+        <div class="px-5 py-2.5 bg-slate-50 rounded-xl border border-slate-200">Cigna Healthcare</div>
+        <div class="px-5 py-2.5 bg-slate-50 rounded-xl border border-slate-200">UnitedHealthcare</div>
+        <div class="px-5 py-2.5 bg-slate-50 rounded-xl border border-slate-200">Medicare Part B</div>
+        <div class="px-5 py-2.5 bg-slate-50 rounded-xl border border-slate-200">Humana</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-sm py-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <div>© 2026 Horizon Virtual Care • Austin, TX</div>
+      <div>Questions? <a href="tel:+18005550199" class="text-brand-300 font-semibold">+1 (800) 555-0199</a></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/insurance-calculator.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

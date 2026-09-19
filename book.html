@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Telehealth Appointment | Horizon Virtual Care</title>
+  <meta name="description" content="Book an online virtual care appointment in under 60 seconds with Horizon Virtual Care. Immediate urgent care or scheduled visits." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+            },
+            tealAccent: {
+              500: '#0d9488',
+              600: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Main Navigation -->
+  <header class="glass-nav border-b border-slate-200/80 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-500 flex items-center justify-center text-white shadow-md">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-lg font-extrabold text-slate-900">Horizon<span class="text-brand-600">Virtual Care</span></span>
+            <span class="block text-[10px] text-slate-500 font-medium">Quality healthcare, wherever you are.</span>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-4 text-xs font-semibold text-slate-600">
+          <span class="hidden sm:inline-flex items-center gap-1.5 text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> HIPAA Encrypted Intake
+          </span>
+          <a href="tel:+18005550199" class="hover:text-brand-600 flex items-center gap-1">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i> +1 (800) 555-0199
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Booking Wizard Container -->
+  <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      
+      <!-- Stepper Progress Bar -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center relative">
+          <div class="step-item text-center flex-1 active" data-step="1">
+            <div class="step-bubble w-9 h-9 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center mx-auto mb-2 transition">1</div>
+            <span class="text-[11px] font-bold text-slate-700 hidden sm:block">Service</span>
+          </div>
+          <div class="step-item text-center flex-1" data-step="2">
+            <div class="step-bubble w-9 h-9 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center mx-auto mb-2 transition">2</div>
+            <span class="text-[11px] font-bold text-slate-700 hidden sm:block">Provider</span>
+          </div>
+          <div class="step-item text-center flex-1" data-step="3">
+            <div class="step-bubble w-9 h-9 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center mx-auto mb-2 transition">3</div>
+            <span class="text-[11px] font-bold text-slate-700 hidden sm:block">Timing</span>
+          </div>
+          <div class="step-item text-center flex-1" data-step="4">
+            <div class="step-bubble w-9 h-9 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center mx-auto mb-2 transition">4</div>
+            <span class="text-[11px] font-bold text-slate-700 hidden sm:block">Patient Details</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Card -->
+      <div id="booking-wizard-card" class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl relative">
+        
+        <form id="booking-form">
+          
+          <!-- STEP 1: Select Service -->
+          <div class="step-section space-y-6" data-step="1">
+            <div>
+              <h2 class="text-2xl font-extrabold text-slate-900">1. Select Reason for Care</h2>
+              <p class="text-xs text-slate-500 mt-1">Choose the telehealth service you require today.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="border-2 border-brand-500 bg-brand-50/40 rounded-2xl p-5 cursor-pointer flex flex-col justify-between hover:border-brand-600 transition">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                  </div>
+                  <input type="radio" name="service" value="urgent-care" checked class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+                </div>
+                <h3 class="font-bold text-slate-900 text-sm">Virtual Urgent Care</h3>
+                <p class="text-xs text-slate-600 mt-1 font-sans-body">Sinus, pink eye, UTI, flu, cold, sore throat, or minor rash.</p>
+                <span class="text-[11px] font-bold text-amber-700 mt-3 block">Wait time: ~6 mins</span>
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer flex flex-col justify-between hover:border-brand-500 transition">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                    <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                  </div>
+                  <input type="radio" name="service" value="primary-care" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+                </div>
+                <h3 class="font-bold text-slate-900 text-sm">Primary Care & Wellness</h3>
+                <p class="text-xs text-slate-600 mt-1 font-sans-body">Dedicated physician, chronic condition oversight, lab orders.</p>
+                <span class="text-[11px] font-bold text-brand-700 mt-3 block">Dr. Sarah Jenkins, MD</span>
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer flex flex-col justify-between hover:border-brand-500 transition">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold">
+                    <i data-lucide="smile" class="w-5 h-5"></i>
+                  </div>
+                  <input type="radio" name="service" value="mental-health" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+                </div>
+                <h3 class="font-bold text-slate-900 text-sm">Mental Health Counseling</h3>
+                <p class="text-xs text-slate-600 mt-1 font-sans-body">Anxiety, depression, CBT therapy, confidential video support.</p>
+                <span class="text-[11px] font-bold text-purple-700 mt-3 block">Dr. Marcus Thorne, DO</span>
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer flex flex-col justify-between hover:border-brand-500 transition">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold">
+                    <i data-lucide="pill" class="w-5 h-5"></i>
+                  </div>
+                  <input type="radio" name="service" value="refill" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+                </div>
+                <h3 class="font-bold text-slate-900 text-sm">Prescription Refill</h3>
+                <p class="text-xs text-slate-600 mt-1 font-sans-body">Fast renewals sent to local CVS/Walgreens. (No controlled substances).</p>
+                <span class="text-[11px] font-bold text-teal-700 mt-3 block">Same-day Pharmacy e-Rx</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: Choose Doctor -->
+          <div class="step-section space-y-6 hidden" data-step="2">
+            <div>
+              <h2 class="text-2xl font-extrabold text-slate-900">2. Select Your Physician</h2>
+              <p class="text-xs text-slate-500 mt-1">Choose a specific doctor or select first available for fastest care.</p>
+            </div>
+
+            <div class="space-y-3">
+              <label class="border-2 border-brand-500 bg-brand-50/40 rounded-2xl p-4 cursor-pointer flex items-center justify-between hover:border-brand-600 transition">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-white font-extrabold flex items-center justify-center text-lg">
+                    ⚡
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">First Available Board-Certified Doctor</h3>
+                    <p class="text-xs text-slate-500">Recommended for fastest urgent care connection (< 15 mins)</p>
+                  </div>
+                </div>
+                <input type="radio" name="doctor" value="first-available" checked class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-4 cursor-pointer flex items-center justify-between hover:border-brand-500 transition">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-teal-600 to-emerald-400 text-white font-extrabold flex items-center justify-center text-sm">
+                    EC
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Dr. Emily Chen, MD</h3>
+                    <p class="text-xs text-slate-500">Urgent Care Specialist • Emergency Medicine Background</p>
+                  </div>
+                </div>
+                <input type="radio" name="doctor" value="dr-chen" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-4 cursor-pointer flex items-center justify-between hover:border-brand-500 transition">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white font-extrabold flex items-center justify-center text-sm">
+                    SJ
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Dr. Sarah Jenkins, MD</h3>
+                    <p class="text-xs text-slate-500">Lead Primary Care • Family Medicine (Johns Hopkins Residency)</p>
+                  </div>
+                </div>
+                <input type="radio" name="doctor" value="dr-jenkins" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-4 cursor-pointer flex items-center justify-between hover:border-brand-500 transition">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-400 text-white font-extrabold flex items-center justify-center text-sm">
+                    MT
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Dr. Marcus Thorne, DO</h3>
+                    <p class="text-xs text-slate-500">Director of Behavioral Health • Licensed Psychiatrist & CBT</p>
+                  </div>
+                </div>
+                <input type="radio" name="doctor" value="dr-thorne" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 3: Timing -->
+          <div class="step-section space-y-6 hidden" data-step="3">
+            <div>
+              <h2 class="text-2xl font-extrabold text-slate-900">3. Choose Appointment Time</h2>
+              <p class="text-xs text-slate-500 mt-1">Join the immediate on-demand queue or schedule for a specific date.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="border-2 border-brand-500 bg-brand-50/40 rounded-2xl p-5 cursor-pointer flex flex-col justify-between hover:border-brand-600 transition">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 uppercase">Available Now</span>
+                  <input type="radio" name="time-choice" value="now" checked class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Immediate On-Demand</h3>
+                <p class="text-xs text-slate-600 mt-1">Enter virtual waiting room right after check-in. Average wait ~6-15 mins.</p>
+              </label>
+
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer flex flex-col justify-between hover:border-brand-500 transition">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-slate-100 text-slate-700 uppercase">Mon-Fri 8am-8pm EST</span>
+                  <input type="radio" name="time-choice" value="scheduled" class="w-5 h-5 text-brand-600 focus:ring-brand-500">
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Schedule for Later</h3>
+                <p class="text-xs text-slate-600 mt-1">Select your preferred date & time slot for non-urgent consultations.</p>
+              </label>
+            </div>
+
+            <!-- Scheduled slot picker (hidden by default unless chosen) -->
+            <div id="scheduled-slots-picker" class="hidden p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+              <label class="block text-xs font-bold text-slate-700 uppercase">Select Preferred Date & Time</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="date" class="w-full text-sm rounded-xl border border-slate-300 p-2.5">
+                <select class="w-full text-sm rounded-xl border border-slate-300 p-2.5">
+                  <option>Morning (9:00 AM - 12:00 PM EST)</option>
+                  <option>Afternoon (1:00 PM - 5:00 PM EST)</option>
+                  <option>Evening (5:00 PM - 8:00 PM EST)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: Patient Info & Payment -->
+          <div class="step-section space-y-6 hidden" data-step="4">
+            <div>
+              <h2 class="text-2xl font-extrabold text-slate-900">4. Patient Information & Pharmacy</h2>
+              <p class="text-xs text-slate-500 mt-1">Secure HIPAA-compliant encrypted details.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">First Name *</label>
+                <input type="text" id="patient-first-name" required placeholder="Jane" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Last Name *</label>
+                <input type="text" id="patient-last-name" required placeholder="Doe" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Email Address (For Secure Video Link) *</label>
+                <input type="email" id="patient-email" required placeholder="jane.doe@example.com" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number (For SMS Link) *</label>
+                <input type="tel" id="patient-phone" required placeholder="+1 (555) 000-0000" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Your State (Licensed in All 50 States) *</label>
+                <select id="patient-state" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+                  <option value="TX">Texas (TX)</option>
+                  <option value="CA">California (CA)</option>
+                  <option value="FL">Florida (FL)</option>
+                  <option value="NY">New York (NY)</option>
+                  <option value="OH">Ohio (OH)</option>
+                  <option value="IL">Illinois (IL)</option>
+                  <option value="PA">Pennsylvania (PA)</option>
+                  <option value="OTHER">Other US State</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Pharmacy (For Any Prescriptions) *</label>
+                <input type="text" id="patient-pharmacy" required placeholder="e.g. CVS Pharmacy #104, Austin TX" class="w-full text-sm rounded-xl border border-slate-300 p-3 focus:outline-none focus:border-brand-500">
+              </div>
+            </div>
+
+            <div class="pt-2 border-t border-slate-200">
+              <label class="block text-xs font-bold text-slate-700 mb-2">Payment / Coverage Method</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="border border-brand-200 bg-brand-50/50 p-3.5 rounded-xl flex items-center gap-3 cursor-pointer">
+                  <input type="radio" name="payment-type" value="insurance" checked class="text-brand-600 focus:ring-brand-500">
+                  <div>
+                    <span class="text-xs font-bold text-slate-900 block">Health Insurance (Copay $0–$25)</span>
+                    <span class="text-[11px] text-slate-500">Aetna, BCBS, Cigna, UHC, Medicare</span>
+                  </div>
+                </label>
+                <label class="border border-slate-200 p-3.5 rounded-xl flex items-center gap-3 cursor-pointer">
+                  <input type="radio" name="payment-type" value="self-pay" class="text-brand-600 focus:ring-brand-500">
+                  <div>
+                    <span class="text-xs font-bold text-slate-900 block">Flat Cash-Pay ($49 Flat)</span>
+                    <span class="text-[11px] text-slate-500">No surprise bills • HSA/FSA accepted</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5: Booking Confirmation (Instant Result) -->
+          <div class="step-section space-y-6 hidden text-center" data-step="5">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+              <i data-lucide="check" class="w-8 h-8"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Appointment Confirmed!</span>
+              <h2 class="text-3xl font-extrabold text-slate-900 mt-1">You Are Ready for Your Visit</h2>
+              <p class="text-xs text-slate-500 mt-2">A secure appointment link has also been sent to your email & phone.</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-left space-y-3 max-w-lg mx-auto text-xs">
+              <div class="flex justify-between py-1 border-b border-slate-200">
+                <span class="text-slate-500 font-medium">Appointment Reference:</span>
+                <span id="conf-app-id" class="font-mono font-bold text-slate-900">#HVC-82914</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-200">
+                <span class="text-slate-500 font-medium">Patient Name:</span>
+                <span id="conf-name" class="font-bold text-slate-900">Jane Doe</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-200">
+                <span class="text-slate-500 font-medium">Service Requested:</span>
+                <span id="conf-service" class="font-bold text-slate-900">Virtual Urgent Care</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-200">
+                <span class="text-slate-500 font-medium">Doctor Assigned:</span>
+                <span id="conf-doctor" class="font-bold text-slate-900">First Available Board-Certified MD</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-200">
+                <span class="text-slate-500 font-medium">Scheduled Time:</span>
+                <span id="conf-time" class="font-bold text-emerald-700">Immediate Queue (~15 mins)</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-slate-500 font-medium">Pharmacy Selected:</span>
+                <span id="conf-pharmacy" class="font-bold text-slate-900">CVS Pharmacy</span>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+              <a id="conf-waiting-room-btn" href="waiting-room.html" class="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                <i data-lucide="video" class="w-4 h-4"></i> Enter Virtual Consultation Room Demo
+              </a>
+              <a href="index.html" class="w-full sm:w-auto px-6 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition text-center">
+                Return to Home
+              </a>
+            </div>
+          </div>
+
+          <!-- Action Buttons (Next / Prev / Submit) -->
+          <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
+            <button type="button" id="btn-prev" class="hidden px-5 py-2.5 text-xs font-bold text-slate-600 hover:text-slate-900 rounded-xl border border-slate-300 hover:bg-slate-50 transition">
+              ← Back
+            </button>
+            <div class="ml-auto flex items-center gap-3">
+              <button type="button" id="btn-next" class="px-8 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-brand-500/25 transition flex items-center gap-2">
+                Continue <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <button type="submit" id="btn-submit" class="hidden px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/25 transition flex items-center gap-2">
+                Confirm & Start Visit <i data-lucide="check" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>© 2026 Horizon Virtual Care • Austin, TX • 24/7 Virtual Urgent Care</p>
+      <p class="text-slate-500">Need immediate help? Call <a href="tel:+18005550199" class="text-brand-300">+1 (800) 555-0199</a> or email <a href="mailto:support@horizonvirtualcare.com" class="text-brand-300">support@horizonvirtualcare.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Telehealth Services | Horizon Virtual Care</title>
+  <meta name="description" content="Explore Horizon Virtual Care's services: 24/7 Virtual Urgent Care, Primary Care & Wellness, Mental Health Counseling, and Prescription Refills across all 50 US states." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+            },
+            tealAccent: {
+              500: '#0d9488',
+              600: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Emergency Notice Bar -->
+  <aside aria-label="Medical Emergency Notice" class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-red-600 text-white uppercase tracking-wider">Emergency Notice</span>
+        <span>For life-threatening emergencies, dial <strong>911</strong> or call/text <strong>988</strong> for Suicide & Crisis Lifeline.</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-slate-400">
+        <span>Support: <a href="tel:+18005550199" class="text-brand-200 font-semibold">+1 (800) 555-0199</a></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Navigation -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition">
+            <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight text-slate-900 flex items-center">
+              Horizon<span class="text-brand-600 font-bold ml-1">Virtual Care</span>
+            </span>
+            <span class="block text-[11px] font-medium text-slate-700 tracking-wide">Quality healthcare, wherever you are.</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600 text-sm">
+          <a href="index.html" class="hover:text-brand-600 transition">Home</a>
+          <a href="services.html" class="text-brand-600 font-semibold">Services</a>
+          <a href="doctors.html" class="hover:text-brand-600 transition">Our Doctors</a>
+          <a href="pricing.html" class="hover:text-brand-600 transition">Pricing & Insurance</a>
+          <a href="contact.html" class="hover:text-brand-600 transition">About & Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="book.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-tealAccent-500 hover:from-brand-700 hover:to-tealAccent-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            Book Appointment
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" aria-label="Toggle mobile menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+      <a href="index.html" class="block py-2 text-slate-700 hover:text-brand-600">Home</a>
+      <a href="services.html" class="block py-2 font-semibold text-brand-600">Services</a>
+      <a href="doctors.html" class="block py-2 text-slate-700 hover:text-brand-600">Our Doctors</a>
+      <a href="pricing.html" class="block py-2 text-slate-700 hover:text-brand-600">Pricing & Insurance</a>
+      <a href="contact.html" class="block py-2 text-slate-700 hover:text-brand-600">About & Contact</a>
+      <div class="pt-3 border-t border-slate-100">
+        <a href="book.html" class="text-center block w-full py-3 bg-brand-600 text-white font-semibold rounded-xl">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-b from-brand-50/70 to-slate-50 py-16 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="stethoscope" class="w-3.5 h-3.5"></i> Comprehensive Telehealth Solutions
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">Our Medical & Behavioral Services</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg font-sans-body">
+        From on-demand urgent care visits within 15 minutes to comprehensive chronic condition management and confidential mental health therapy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services In-Depth -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      
+      <!-- Service 1: Virtual Urgent Care -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center" id="urgent-care">
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i> 24/7 Available Now
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">1. Virtual Urgent Care</h2>
+          <p class="text-slate-600 font-sans-body text-base leading-relaxed">
+            Talk to a doctor within 15 minutes for common conditions like sinus infections, pink eye, UTIs, and the flu. No need to sit in a germ-filled physical waiting room.
+          </p>
+
+          <div class="bg-amber-50/60 rounded-2xl p-5 border border-amber-200/80 space-y-3">
+            <h4 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Common Conditions We Treat:</h4>
+            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Sinusitis & Nasal Congestion</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Pink Eye (Conjunctivitis)</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Urinary Tract Infections (UTIs)</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Seasonal Influenza & Colds</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Strep Throat & Cough</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Mild Rashes & Bug Bites</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a href="book.html?service=urgent-care" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl transition flex items-center gap-2 shadow-lg shadow-amber-600/20">
+              <i data-lucide="zap" class="w-4 h-4"></i> Enter Urgent Care Queue (~6 min wait)
+            </a>
+            <span class="text-xs text-slate-500 font-medium">Lead: <strong>Dr. Emily Chen, MD</strong></span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
+            <i data-lucide="clock" class="w-5 h-5 text-amber-600"></i> How Rapid Urgent Care Works
+          </h3>
+          <ol class="space-y-3 text-sm text-slate-600 font-sans-body">
+            <li class="flex gap-3">
+              <span class="w-6 h-6 rounded-full bg-amber-200 text-amber-900 font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+              <span><strong>Instant Check-in:</strong> Complete brief symptom checklist and select pharmacy.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-6 h-6 rounded-full bg-amber-200 text-amber-900 font-bold flex items-center justify-center shrink-0 text-xs">2</span>
+              <span><strong>Under 15-Minute Connection:</strong> Connect live with an emergency/urgent care MD via encrypted video.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-6 h-6 rounded-full bg-amber-200 text-amber-900 font-bold flex items-center justify-center shrink-0 text-xs">3</span>
+              <span><strong>Immediate Prescription:</strong> Medication ordered electronically to your pharmacy of choice within minutes.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <hr class="border-slate-200" />
+
+      <!-- Service 2: Primary Care & Wellness -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center" id="primary-care">
+        <div class="lg:col-span-6 space-y-5 order-2 lg:order-1 bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
+            <i data-lucide="stethoscope" class="w-5 h-5 text-brand-600"></i> Dedicated Continuous Healthcare
+          </h3>
+          <p class="text-sm text-slate-600 font-sans-body leading-relaxed">
+            With Horizon Primary Care, you don't just see a random provider; you establish a meaningful relationship with a dedicated family physician who understands your medical history, goals, and lifestyle.
+          </p>
+          <div class="space-y-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2 p-2 bg-white rounded-lg border border-slate-200">
+              <i data-lucide="file-check" class="w-4 h-4 text-brand-600"></i>
+              <span>Comprehensive Annual Wellness & Bloodwork Ordering</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 bg-white rounded-lg border border-slate-200">
+              <i data-lucide="activity" class="w-4 h-4 text-brand-600"></i>
+              <span>Hypertension, High Cholesterol, & Diabetes Management</span>
+            </div>
+            <div class="flex items-center gap-2 p-2 bg-white rounded-lg border border-slate-200">
+              <i data-lucide="send" class="w-4 h-4 text-brand-600"></i>
+              <span>Direct Specialist & Diagnostic Imaging Referrals</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-5 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="heart-pulse" class="w-3.5 h-3.5"></i> Longitudinal Care
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">2. Primary Care & Wellness</h2>
+          <p class="text-slate-600 font-sans-body text-base leading-relaxed">
+            Build a long-term relationship with a dedicated physician for chronic condition management, preventive care, and lab test referrals.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a href="book.html?service=primary-care&doctor=dr-jenkins" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm rounded-xl transition flex items-center gap-2 shadow-lg shadow-brand-600/20">
+              <i data-lucide="calendar" class="w-4 h-4"></i> Book Primary Care Consult
+            </a>
+            <span class="text-xs text-slate-500 font-medium">Lead: <strong>Dr. Sarah Jenkins, MD (Johns Hopkins)</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-slate-200" />
+
+      <!-- Service 3: Mental Health Counseling -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center" id="mental-health">
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="smile" class="w-3.5 h-3.5"></i> 100% Confidential & Secure
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">3. Mental Health Counseling</h2>
+          <p class="text-slate-600 font-sans-body text-base leading-relaxed">
+            Confidential, secure video sessions with licensed therapists and psychiatrists to help with anxiety, depression, and stress management.
+          </p>
+
+          <div class="bg-purple-50/60 rounded-2xl p-5 border border-purple-200/80 space-y-3">
+            <h4 class="text-xs font-bold text-purple-900 uppercase tracking-wider">Areas of Behavioral Focus:</h4>
+            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Generalized Anxiety Disorder</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Depression & Mood Disorders</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Panic Attacks & Phobias</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Cognitive Behavioral Therapy (CBT)</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Workplace Stress & Burnout</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Grief & Major Life Changes</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a href="book.html?service=mental-health&doctor=dr-thorne" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm rounded-xl transition flex items-center gap-2 shadow-lg shadow-purple-600/20">
+              <i data-lucide="video" class="w-4 h-4"></i> Schedule Therapy Session
+            </a>
+            <span class="text-xs text-slate-500 font-medium">Lead: <strong>Dr. Marcus Thorne, DO</strong></span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-5 h-5 text-purple-600"></i> Private, Compassionate Care
+          </h3>
+          <p class="text-sm text-slate-600 font-sans-body leading-relaxed">
+            Our virtual therapy rooms are completely encrypted, providing a safe and judgment-free space to speak with compassionate mental health professionals from the privacy of your home.
+          </p>
+          <div class="bg-purple-100/50 p-3 rounded-xl border border-purple-200 text-xs text-purple-900">
+            <strong>Crisis Notice:</strong> If you or someone you know is in immediate crisis, please dial or text <strong>988</strong> to connect with the 988 Suicide & Crisis Lifeline available 24/7.
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-slate-200" />
+
+      <!-- Service 4: Prescription Refills -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center" id="refills">
+        <div class="lg:col-span-6 space-y-5 order-2 lg:order-1 bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
+            <i data-lucide="pill" class="w-5 h-5 text-teal-600"></i> e-Prescription & Pharmacy Integration
+          </h3>
+          <p class="text-sm text-slate-600 font-sans-body leading-relaxed">
+            We transmit prescriptions directly into the SureScripts nationwide pharmacy network. Your medication will be waiting at your chosen pharmacy counter or available for home delivery.
+          </p>
+          <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900">
+            <strong>Important Prescription Policy:</strong> Horizon Virtual Care adheres to all federal and state telehealth prescribing laws. We <strong>DO NOT</strong> prescribe DEA Schedule II–V controlled substances (e.g., Adderall, Xanax, Ambien, Oxycodone, Testosterone) via telehealth.
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-5 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Fast e-Prescribing
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">4. Prescription Refills</h2>
+          <p class="text-slate-600 font-sans-body text-base leading-relaxed">
+            Fast and easy prescription renewals sent directly to your local pharmacy. Never miss a dose of essential maintenance medication while between doctor appointments.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a href="book.html?service=refill" class="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm rounded-xl transition flex items-center gap-2 shadow-lg shadow-teal-600/20">
+              <i data-lucide="pill" class="w-4 h-4"></i> Request Prescription Renewal
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Telehealth vs ER Guide -->
+  <section class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">When to Use Telehealth vs. Emergency Room</h2>
+        <p class="text-sm text-slate-600 mt-2 font-sans-body">Helping you make the safest decision for your healthcare needs.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-2xl border border-emerald-200 shadow-sm space-y-3">
+          <div class="flex items-center gap-2 text-emerald-600 font-bold text-base">
+            <i data-lucide="check-circle" class="w-5 h-5"></i> Ideal for Horizon Virtual Care
+          </div>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li>• Sinus infections, cold, flu, cough, and sore throat</li>
+            <li>• Urinary tract infections and painful urination</li>
+            <li>• Pink eye, conjunctivitis, and minor allergies</li>
+            <li>• Rash, hives, insect bites, minor burns, and eczema</li>
+            <li>• Asthma inhaler and routine maintenance drug refills</li>
+            <li>• Therapy for anxiety, depression, and stress management</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-red-200 shadow-sm space-y-3">
+          <div class="flex items-center gap-2 text-red-600 font-bold text-base">
+            <i data-lucide="alert-triangle" class="w-5 h-5"></i> Go to Emergency Room / Call 911
+          </div>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li>• Severe chest pain or sudden shortness of breath</li>
+            <li>• Symptoms of stroke (facial drooping, arm weakness, slurred speech)</li>
+            <li>• Heavy uncontrolled bleeding or deep lacerations</li>
+            <li>• Head trauma, loss of consciousness, or severe convulsions</li>
+            <li>• Severe acute poisoning or drug overdose</li>
+            <li>• Compound fractures or severe trauma</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-14 bg-brand-600 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 space-y-4">
+      <h2 class="text-2xl sm:text-3xl font-bold">Have an acute symptom or need a prescription?</h2>
+      <p class="text-brand-100 text-sm">See a doctor right now. No appointments required for virtual urgent care.</p>
+      <div class="pt-2">
+        <a href="book.html" class="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-slate-900 font-extrabold text-sm rounded-xl shadow-lg hover:bg-slate-100 transition">
+          Book Your Visit Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+        <div>© 2026 Horizon Virtual Care • 400 W 15th St, Suite 750, Austin, TX 78701</div>
+        <div class="flex gap-4">
+          <a href="mailto:support@horizonvirtualcare.com" class="hover:text-white">support@horizonvirtualcare.com</a>
+          <span>•</span>
+          <a href="tel:+18005550199" class="hover:text-white">+1 (800) 555-0199</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
